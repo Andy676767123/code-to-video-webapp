@@ -53,13 +53,13 @@ export function PaymentFlow() {
       {cart.map((item) => (
         <div key={item.id} className="item-row">
           <span>{item.name}</span>
-          <strong>${item.price}</strong>
+          <strong>\${item.price}</strong>
         </div>
       ))}
 
       <div className="summary-row">
         <span>Total</span>
-        <strong>${total}</strong>
+        <strong>\${total}</strong>
       </div>
 
       <button onClick={handleCheckout} disabled={status === "processing"}>
@@ -195,10 +195,8 @@ export default function CodeVideoStudio() {
 
     const renderDuration = Math.max(4200, scenes.length * 1100);
     const stepDuration = Math.max(700, renderDuration / scenes.length);
-    let tick = 0;
 
     const interval = window.setInterval(() => {
-      tick += 1;
       setSceneIndex((previous) => (previous + 1) % scenes.length);
     }, stepDuration);
 
